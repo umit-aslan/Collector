@@ -293,8 +293,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalRotation: {x: 0.022506088, y: 0.9754141, z: -0.18386139, w: 0.11939788}
+  m_LocalPosition: {x: -1.416254, y: 3.155017, z: 6.9335585}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -356,5 +356,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: dott_rigged_tpose
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: dad1fe31f0139444bbd8e2482c27221f, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: d6ede4d2d9e1fee4b8a9adb7a0ed2faa, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dad1fe31f0139444bbd8e2482c27221f, type: 3}
