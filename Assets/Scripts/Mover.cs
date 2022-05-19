@@ -17,6 +17,7 @@ public class Mover : MonoBehaviour
     {
         if (Input.GetMouseButton(0))
         {
+            animator.SetBool("Idling", false);
             Movement();
         }
         else
@@ -24,6 +25,7 @@ public class Mover : MonoBehaviour
             if (animator.GetBool("Run"))
             {
                 animator.SetBool("Run", false);
+                animator.SetBool("Idling", true);
             }
         }
     }
