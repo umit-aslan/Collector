@@ -28,6 +28,7 @@ public class StackManager : MonoBehaviour
         Vector3 desPos=prevObject.localPosition;//Önceki stack'in pozisyonunu al.
         desPos.y+=downOrUp?distanceBetweenStacks:-distanceBetweenStacks;//Yukarı veya aşağı yukarı ise yukarıya, aşağı ise aşağıya ata.
         pickedObject.transform.localPosition=desPos;//Pozisyonu ata.
+        pickedObject.transform.localRotation=Quaternion.identity;//Döndürmeyi sıfırla.
         prevObject=pickedObject.transform;//Önceki stack'i ata.  
   }
 }
