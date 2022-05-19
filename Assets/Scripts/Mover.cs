@@ -42,14 +42,12 @@ public class Mover : MonoBehaviour
         {
             Vector3 hitVec = hit.point;
             hitVec.y = transform.position.y;
-
-            
             transform.position = Vector3.MoveTowards(transform.position,Vector3.Lerp(transform.position, hitVec, lerpValue), speed * Time.deltaTime);
             Vector3 newMovePoint = new Vector3(hit.point.x, transform.position.y, hit.point.z);
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(newMovePoint - transform.position), turnSpeed * Time.deltaTime);
-            if (!animator.GetBool("Run"))
+            if (!animator.GetBool("Run"))//Eğer run animasyonu çalışmıyorsa
             {
-                animator.SetBool("Run", true);
+                animator.SetBool("Run", true);//Run animasyonu çalıştırılıyor.
             }
         }
         

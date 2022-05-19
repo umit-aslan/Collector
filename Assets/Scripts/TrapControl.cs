@@ -14,7 +14,6 @@ public class TrapControl : MonoBehaviour
    private void OnCollisionEnter(Collision other) {
        if (other.gameObject.CompareTag("trap"))
        {
-          Debug.Log("Trap");
           mover.animator.SetBool("Impact", true);
           mover.animator.SetBool("Idling", false);
           mover.animator.SetBool("Run", false);
@@ -24,21 +23,24 @@ public class TrapControl : MonoBehaviour
        } 
    }
    private void OnCollisionExit(Collision other) {
-       stackManager.prevObject=GameObject.Find("Stack1").transform;
-        mover.animator.SetBool("Impact", false);
-        mover.animator.SetBool("Idling", true);
-        mover.animator.SetBool("Run", false);
+        stackManager.prevObject=GameObject.Find("Stack1").transform;
+        StartCoroutine(ImpactEffect());
    }
    private IEnumerator IClearItems()
      {
          for (int i = 1; i < parent.transform.childCount; i++)
          {
              
-         Destroy(parent.transform.GetChild(i).gameObject);  
+         Destroy(parent.transform.GetChild(i).gameObject);//Tüm öğeleri siler
          }
-         yield return new WaitUntil(() => parent.transform.childCount == 0);
-        
-         // Code to initialize your new items
+         yield return new WaitUntil(() => parent.transform.childCount == 0);//Çocuklarının silinmesi için beklemek gerekir.
      }
-   
+     IEnumerator ImpactEffect()
+     {
+        yield return new WaitForSeconds(.5f);
+        mover.animator.SetBool("Impact", false);
+        mover.animator.SetBool("Idling", true);
+        mover.animator.SetBool("Run", false);
+     }
 }
+    
