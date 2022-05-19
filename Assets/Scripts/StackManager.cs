@@ -6,7 +6,7 @@ public class StackManager : MonoBehaviour
 {
     public static StackManager instance;//Diğer scriptlerden buraya erişebilmek için static olarak tanımladık.
     [SerializeField] private float  distanceBetweenStacks;//Stacklar arasındaki mesafe.
-    [SerializeField] private Transform prevObject;//Önceki stack.
+    public  Transform prevObject;//Önceki stack.
     [SerializeField] private Transform parent;//Stackların ekleneceği parent.
 
     private void Awake() {

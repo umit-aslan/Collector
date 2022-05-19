@@ -5,7 +5,7 @@ using UnityEngine;
 public class Mover : MonoBehaviour
 {
     private Camera cam;
-    private Animator animator;
+    public Animator animator;
     public   float  turnSpeed, speed, lerpValue;
     public   LayerMask layer;
     void Start() 
