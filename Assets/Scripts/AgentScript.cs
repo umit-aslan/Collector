@@ -7,10 +7,15 @@ public class AgentScript : MonoBehaviour
 {
    public NavMeshAgent agent;
    Transform target;
+   Animator anim;
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         target = GameObject.FindGameObjectWithTag("Player").transform;
+        anim = GetComponent<Animator>();
+        anim.SetBool("Run", true);
+        anim.SetBool("Idling", false);
+        anim.SetBool("Impact", false);
     }
 
     
