@@ -58,7 +58,7 @@ public class AgentScript : MonoBehaviour
         {
             anim.SetBool("Attack", false);
             anim.SetBool("isWalking", false);
-            Debug.Log("Player is Dead. Zombie  Win");
+            
             target.GetComponent<Rigidbody>().velocity = Vector3.zero;
         }
        

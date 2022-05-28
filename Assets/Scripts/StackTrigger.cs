@@ -9,7 +9,7 @@ public class StackTrigger : MonoBehaviour
     {
         if (other.tag=="Pick")
         {
-            other.gameObject.tag="Stacks";
+           // other.gameObject.tag="Stacks";
             StackManager.instance.PickUp(other.gameObject);
         }
     }
