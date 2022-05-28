@@ -31,8 +31,8 @@ public class TrapControl : MonoBehaviour
          for (int i = 1; i < parent.transform.childCount; i++)
          {
              
-          //Destroy(parent.transform.GetChild(i).gameObject);//Tüm öğeleri siler
-           parent.transform.GetChild(i).transform.parent=null;//Parent'ı sıfırla
+          Destroy(parent.transform.GetChild(i).gameObject);//Tüm öğeleri siler
+           //parent.transform.GetChild(i).transform.parent=null;//Parent'ı sıfırla
          }
          yield return new WaitUntil(() => parent.transform.childCount == 0);//Çocuklarının silinmesi için beklemek gerekir.
      }

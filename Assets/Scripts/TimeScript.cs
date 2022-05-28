@@ -19,6 +19,10 @@ public class TimeScript : MonoBehaviour
             yield return new WaitForSeconds(1);
             GeriSayim--;
             timeText.GetComponent<Text>().text ="Time: "+ GeriSayim.ToString();
+            if (GeriSayim == 0) {
+                timeText.GetComponent<Text>().text = "Time: 0";
+                break;
+            } 
         }
     }
 }
