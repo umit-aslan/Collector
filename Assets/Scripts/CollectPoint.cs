@@ -11,11 +11,13 @@ public class CollectPoint : MonoBehaviour
     TrapControl trapControlScript;
     public GameObject parent;
     StackManager stackManager;
-
+    public GameObject stackObjectParent;
+    Game_Manager game_ManagerScript;
 
     private void Start() {
         trapControlScript = FindObjectOfType<TrapControl>();
         stackManager = FindObjectOfType<StackManager>();
+        game_ManagerScript = FindObjectOfType<Game_Manager>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -23,7 +25,10 @@ public class CollectPoint : MonoBehaviour
         if (other.gameObject.CompareTag("StackArea"))
         {
             StartCoroutine(ICollect());
-            
+            if (stackObjectParent.transform.childCount == 0)
+            {
+                game_ManagerScript.GameWin();
+            }
         }
         collectText.GetComponent<Text>().text = counter.ToString();
         Debug.Log(counter);

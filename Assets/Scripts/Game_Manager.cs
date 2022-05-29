@@ -7,7 +7,9 @@ public class Game_Manager : MonoBehaviour
 {
     public GameObject startPanel;
     public GameObject GameOverPanel;
+    public GameObject GameWinPanel;
     AudioSource audioSource;
+   public AudioClip[] audioClips;
    private void Start()
    {
        Time.timeScale = 0;
@@ -22,4 +24,20 @@ public class Game_Manager : MonoBehaviour
    {
         SceneManager.LoadScene(0);  
    }
+
+   public void GameWin()
+   {
+        GameOverPanel.SetActive(true);
+        Time.timeScale = 0;
+        audioSource.PlayOneShot(audioClips[0]);
+   }
+
+   public void GameOver()
+   {
+        GameOverPanel.SetActive(true);
+        Time.timeScale = 0;
+        audioSource.PlayOneShot(audioClips[1]);
+   }
+
+
 }

@@ -8,10 +8,12 @@ public class TimeScript : MonoBehaviour
     public GameObject timeText;
     public int GeriSayim;
     public GameObject gameOverPanel;
+    Game_Manager game_ManagerScript;
     
     private void Start() 
     {
         StartCoroutine(TimeCount());
+        game_ManagerScript=FindObjectOfType<Game_Manager>();
     }
 
 
@@ -22,8 +24,7 @@ public class TimeScript : MonoBehaviour
             timeText.GetComponent<Text>().text ="Time: "+ GeriSayim.ToString();
             if (GeriSayim == 0) {
                 timeText.GetComponent<Text>().text = "Time: 0";
-                gameOverPanel.SetActive(true);
-                Time.timeScale = 0;
+                game_ManagerScript.GameOver();
                 break;
             } 
         }
