@@ -7,9 +7,11 @@ public class Game_Manager : MonoBehaviour
 {
     public GameObject startPanel;
     public GameObject GameOverPanel;
+    AudioSource audioSource;
    private void Start()
    {
        Time.timeScale = 0;
+        audioSource = GetComponent<AudioSource>();
    }
    public void GameStart()
    {

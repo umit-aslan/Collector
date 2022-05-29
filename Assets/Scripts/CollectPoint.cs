@@ -6,10 +6,12 @@ using UnityEngine.UI;
 public class CollectPoint : MonoBehaviour
 {
     public GameObject collectText;
+
     public int counter = 0;
     TrapControl trapControlScript;
     public GameObject parent;
     StackManager stackManager;
+
 
     private void Start() {
         trapControlScript = FindObjectOfType<TrapControl>();
@@ -35,7 +37,7 @@ public class CollectPoint : MonoBehaviour
      {
          for (int i = 1; i < parent.transform.childCount; i++)
          {
-             counter+=10;
+            counter+=10;
             Destroy(parent.transform.GetChild(i).gameObject);//Tüm öğeleri siler
            //parent.transform.GetChild(i).transform.parent=null;//Parent'ı sıfırla
          }
