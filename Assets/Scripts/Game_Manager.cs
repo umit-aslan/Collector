@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Game_Manager : MonoBehaviour
 {
     public GameObject startPanel;
+    public GameObject GameOverPanel;
    private void Start()
    {
        Time.timeScale = 0;
@@ -13,5 +15,9 @@ public class Game_Manager : MonoBehaviour
    {
         Time.timeScale = 1;
         startPanel.SetActive(false);
+   }
+   public void GameRestart()
+   {
+        SceneManager.LoadScene(0);  
    }
 }
