@@ -21,6 +21,7 @@ public class CollectPoint : MonoBehaviour
         if (other.gameObject.CompareTag("StackArea"))
         {
             StartCoroutine(ICollect());
+            
         }
         collectText.GetComponent<Text>().text = counter.ToString();
         Debug.Log(counter);
@@ -34,7 +35,7 @@ public class CollectPoint : MonoBehaviour
      {
          for (int i = 1; i < parent.transform.childCount; i++)
          {
-             counter++;
+             counter+=10;
             Destroy(parent.transform.GetChild(i).gameObject);//Tüm öğeleri siler
            //parent.transform.GetChild(i).transform.parent=null;//Parent'ı sıfırla
          }
