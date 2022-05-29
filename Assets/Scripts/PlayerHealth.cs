@@ -11,10 +11,10 @@ public class PlayerHealth : MonoBehaviour
     
   private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.tag == "Enemy")
+        if (other.gameObject.tag == "enemy")
         {
             health--;
-            healthText.GetComponent<Text>().text = "Health: " + health;
+            healthText.GetComponent<Text>().text = health.ToString();
         }
     }
 }
