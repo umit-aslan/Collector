@@ -8657,7 +8657,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1357620944}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1.1439812, y: 1, z: 1.2552861}
@@ -9901,6 +9901,11 @@ Transform:
   m_Father: {fileID: 513798066}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1555496608 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2260802052553274574, guid: 034deddd08938d9418a3cfe3bf2eacf3, type: 3}
+  m_PrefabInstance: {fileID: 2260802053590985554}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1568108394
 GameObject:
   m_ObjectHideFlags: 0
@@ -14187,6 +14192,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthText: {fileID: 2118666019}
   health: 3
+--- !u!114 &543450652221925043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 113962604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4ae306d87e2f87458653b3d6db464e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collectText: {fileID: 1956233760}
+  counter: 0
+  parent: {fileID: 1555496608}
 --- !u!1001 &2182018765063471397
 PrefabInstance:
   m_ObjectHideFlags: 0
