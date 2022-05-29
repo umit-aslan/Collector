@@ -8,6 +8,7 @@ TagManager:
   - trap
   - Stacks
   - enemy
+  - StackArea
   layers:
   - Default
   - TransparentFX
