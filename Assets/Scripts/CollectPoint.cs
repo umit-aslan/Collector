@@ -30,12 +30,13 @@ public class CollectPoint : MonoBehaviour
                 game_ManagerScript.GameWin();
             }
         }
-        collectText.GetComponent<Text>().text = counter.ToString();
+        
         Debug.Log(counter);
     }
     private void OnCollisionExit(Collision other)
     {
         stackManager.prevObject=GameObject.Find("Stack1").transform;
+        collectText.GetComponent<Text>().text = counter.ToString();
     }
 
     private IEnumerator ICollect()

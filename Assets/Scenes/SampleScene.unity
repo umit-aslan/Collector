@@ -14875,6 +14875,8 @@ MonoBehaviour:
   GameOvercollectText: {fileID: 444105785}
   health: 3
   gameOverPanel: {fileID: 1800212240}
+  audioClips:
+  - {fileID: 8300000, guid: 46598472a289cce478f98da87dc7fa8f, type: 3}
 --- !u!114 &543450652221925043
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14890,7 +14892,7 @@ MonoBehaviour:
   collectText: {fileID: 1956233760}
   counter: 0
   parent: {fileID: 1555496608}
-  stackObjectParent: {fileID: 0}
+  stackObjectParent: {fileID: 513798065}
 --- !u!1001 &2182018765063471397
 PrefabInstance:
   m_ObjectHideFlags: 0
