@@ -20,11 +20,9 @@ public class PlayerHealth : MonoBehaviour
         audioSource=GetComponent<AudioSource>();
     }
 
-  private void OnCollisionEnter(Collision other)
+    public void healthWarning()
     {
-        if (other.gameObject.tag == "enemy")
-        {
-            audioSource.PlayOneShot(audioClips[0]);
+        audioSource.PlayOneShot(audioClips[0]);
             health--;
             healthText.GetComponent<Text>().text =  health.ToString();
              if (health == 0) {
@@ -32,6 +30,5 @@ public class PlayerHealth : MonoBehaviour
                 GameOvercollectText.GetComponent<Text>().text = collectPointScript.counter.ToString();
                 game_ManagerScript.GameOver();
             } 
-        }
     }
 }

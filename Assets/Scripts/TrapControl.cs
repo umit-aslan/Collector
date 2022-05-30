@@ -7,13 +7,16 @@ public class TrapControl : MonoBehaviour
     public GameObject parent;
     StackManager stackManager;
     Mover mover;
+    PlayerHealth playerHealth;
     void Start() {
         stackManager = FindObjectOfType<StackManager>();
         mover = FindObjectOfType<Mover>();
+        playerHealth = FindObjectOfType<PlayerHealth>();
     }
    private void OnCollisionEnter(Collision other) {
        if (other.gameObject.CompareTag("trap")||other.gameObject.CompareTag("enemy"))
        {
+           playerHealth.healthWarning();
           mover.animator.SetBool("Impact", true);
           mover.animator.SetBool("Idling", false);
           mover.animator.SetBool("Run", false);
