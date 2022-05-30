@@ -8,6 +8,7 @@ public class Game_Manager : MonoBehaviour
 {
     public GameObject startPanel;
     public GameObject GameOverPanel;
+    public GameObject GameOverPanelScoreText;
     public GameObject GameWinPanel;
     public GameObject GameWinPanelScoreText;
     CollectPoint collectPoint;
@@ -39,6 +40,7 @@ public class Game_Manager : MonoBehaviour
 
    public void GameOver()
    {
+        GameOverPanelScoreText.GetComponent<Text>().text = "Score: " + collectPoint.counter.ToString();
         GameOverPanel.SetActive(true);
         Time.timeScale = 0;
         audioSource.PlayOneShot(audioClips[1]);
