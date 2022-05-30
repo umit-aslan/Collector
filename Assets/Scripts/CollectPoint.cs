@@ -25,6 +25,7 @@ public class CollectPoint : MonoBehaviour
         if (other.gameObject.CompareTag("StackArea"))
         {
             StartCoroutine(ICollect());
+            collectText.GetComponent<Text>().text = counter.ToString();
             if (stackObjectParent.transform.childCount == 0)
             {
                 game_ManagerScript.GameWin();
@@ -36,7 +37,7 @@ public class CollectPoint : MonoBehaviour
     private void OnCollisionExit(Collision other)
     {
         stackManager.prevObject=GameObject.Find("Stack1").transform;
-        collectText.GetComponent<Text>().text = counter.ToString();
+        
     }
 
     private IEnumerator ICollect()

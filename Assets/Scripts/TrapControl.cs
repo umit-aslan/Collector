@@ -12,7 +12,7 @@ public class TrapControl : MonoBehaviour
         mover = FindObjectOfType<Mover>();
     }
    private void OnCollisionEnter(Collision other) {
-       if (other.gameObject.CompareTag("trap"))
+       if (other.gameObject.CompareTag("trap")||other.gameObject.CompareTag("enemy"))
        {
           mover.animator.SetBool("Impact", true);
           mover.animator.SetBool("Idling", false);
