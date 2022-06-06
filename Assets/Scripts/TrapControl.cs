@@ -27,7 +27,7 @@ public class TrapControl : MonoBehaviour
    }
    private void OnCollisionExit(Collision other) {
         stackManager.prevObject=GameObject.Find("Stack1").transform;
-        StartCoroutine(ImpactEffect());
+        StartCoroutine(ImpactEffect());//start coroutine
    }
    private IEnumerator IClearItems()
      {
@@ -41,10 +41,10 @@ public class TrapControl : MonoBehaviour
      }
      IEnumerator ImpactEffect()
      {
-        yield return new WaitForSeconds(.5f);
-        mover.animator.SetBool("Impact", false);
-        mover.animator.SetBool("Idling", true);
-        mover.animator.SetBool("Run", false);
+        yield return new WaitForSeconds(.5f);//0.5 saniye bekle
+        mover.animator.SetBool("Impact", false);//Impact animasyonunu kapat
+        mover.animator.SetBool("Idling", true);//Idling animasyonunu aç
+        mover.animator.SetBool("Run", false);//Run animasyonunu kapat
      }
 }
     
