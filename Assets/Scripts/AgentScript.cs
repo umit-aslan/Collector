@@ -34,25 +34,25 @@ public class AgentScript : MonoBehaviour
         agent.updateRotation = true;
         agent.SetDestination(target.transform.position);
         agent.updatePosition = true;
-        anim.SetBool("Idling", false);
-        anim.SetBool("Impact", false); 
-        anim.SetBool("Run", true);  
+        anim.SetBool("Idling", false);//Idling animasyonunu kapat
+        anim.SetBool("Impact", false); //Impact animasyonunu kapat
+        anim.SetBool("Run", true);  // Run animasyonunu aç
         }
-        else if (distance<=10&&isDeadPlayer==false)
+        else if (distance<=10&&isDeadPlayer==false)//Aradaki mesafe 10'dan küçükse
         {
         Vector3 direction = target.position - transform.position;
         direction.y = 0;
         transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction), turnSpeed * Time.deltaTime);
         agent.updatePosition = false;
-        anim.SetBool("Run", false);
-        anim.SetBool("Impact", true);  
+        anim.SetBool("Run", false);//Run animasyonunu durdur
+        anim.SetBool("Impact", true);//Impact animasyonunu aç
         
         }
-        else if (distance>=60)
+        else if (distance>=60)//Aradaki mesafe 60'dan büyükse
         {           
-            anim.SetBool("Idling", true);
-            anim.SetBool("Impact", false);  
-            anim.SetBool("Run", false); 
+            anim.SetBool("Idling", true);//Idle animasyonunu aç
+            anim.SetBool("Impact", false);//Impact animasyonunu durdur
+            anim.SetBool("Run", false); //Run animasyonunu durdur
         }
         else if(isDeadPlayer)
         {
