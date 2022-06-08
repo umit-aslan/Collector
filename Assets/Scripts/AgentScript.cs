@@ -16,18 +16,18 @@ public class AgentScript : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         target = GameObject.FindGameObjectWithTag("Player").transform;
         anim = GetComponent<Animator>();
-        anim.SetBool("Run", true);
-        anim.SetBool("Idling", false);
-        anim.SetBool("Impact", false);
+        anim.SetBool("Run", true);// Run animasyonunu aç
+        anim.SetBool("Idling", false);//Idling animasyonunu kapat
+        anim.SetBool("Impact", false);//Impact animasyonunu kapat
     }  
     void Update()
     {
-     FollowPlayer();
+     FollowPlayer();//follow player
     }
 
     public void FollowPlayer()
     {       
-        distance = Vector3.Distance(transform.position, target.position);
+        distance = Vector3.Distance(transform.position, target.position);//Distance hesaplaması
         
         if (distance<60&&distance>10&&isDeadPlayer==false)
         {
