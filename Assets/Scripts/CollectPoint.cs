@@ -28,11 +28,9 @@ public class CollectPoint : MonoBehaviour
             collectText.GetComponent<Text>().text = counter.ToString();
             if (stackObjectParent.transform.childCount == 0)
             {
-                game_ManagerScript.GameWin();
+                game_ManagerScript.GameWin();//Çocuk objelerinin sayısı 0 ise oyunu kazanır
             }
         }
-        
-        Debug.Log(counter);
     }
     private void OnCollisionExit(Collision other)
     {
@@ -44,7 +42,7 @@ public class CollectPoint : MonoBehaviour
      {
          for (int i = 1; i < parent.transform.childCount; i++)
          {
-            counter+=10;
+            counter+=10;//counter'ı 10 artır
             Destroy(parent.transform.GetChild(i).gameObject);//Tüm öğeleri siler
            //parent.transform.GetChild(i).transform.parent=null;//Parent'ı sıfırla
          }
