@@ -17,15 +17,15 @@ public class Mover : MonoBehaviour
     {
         if (Input.GetMouseButton(0))
         {
-            animator.SetBool("Idling", false);
+            animator.SetBool("Idling", false);//Idling animasyonunu kapatıyoruz.
             Movement();
         }
         else
         {
-            if (animator.GetBool("Run"))
+            if (animator.GetBool("Run"))//Eğer run animasyonu çalışıyorsa
             {
-                animator.SetBool("Run", false);
-                animator.SetBool("Idling", true);
+                animator.SetBool("Run", false);//Run animasyonunu kapatıyoruz.
+                animator.SetBool("Idling", true);//Idling animasyonunu açıyoruz.
             }
         }
     }
@@ -40,7 +40,7 @@ public class Mover : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, Mathf.Infinity, layer))
         {
-            Vector3 hitVec = hit.point;
+            Vector3 hitVec = hit.point;//Raycast ile çarpılan nokta
             hitVec.y = transform.position.y;
             transform.position = Vector3.MoveTowards(transform.position,Vector3.Lerp(transform.position, hitVec, lerpValue), speed * Time.deltaTime);
             Vector3 newMovePoint = new Vector3(hit.point.x, transform.position.y, hit.point.z);
