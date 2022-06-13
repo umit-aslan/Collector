@@ -15,20 +15,20 @@ public class PlayerHealth : MonoBehaviour
     AudioSource audioSource;
     
     private void Start() {
-        collectPointScript=FindObjectOfType<CollectPoint>();
-        game_ManagerScript=FindObjectOfType<Game_Manager>();
-        audioSource=GetComponent<AudioSource>();
+        collectPointScript=FindObjectOfType<CollectPoint>();//collectPointScript'e erişiyoruz
+        game_ManagerScript=FindObjectOfType<Game_Manager>();//game_ManagerScript'e erişiyoruz
+        audioSource=GetComponent<AudioSource>();//audioSource'a erişiyoruz
     }
 
     public void healthWarning()
     {
         audioSource.PlayOneShot(audioClips[0]);
-            health--;
+            health--;//health'i 1 azaltıyoruz
             healthText.GetComponent<Text>().text =  health.ToString();
              if (health == 0) {
-                Debug.Log("Game Over");
+                //Debug.Log("Game Over");
                 GameOvercollectText.GetComponent<Text>().text = collectPointScript.counter.ToString();
-                game_ManagerScript.GameOver();
+                game_ManagerScript.GameOver();//GameOver fonksiyonunu çalıştırıyoruz.
             } 
     }
 }
