@@ -22,9 +22,9 @@ public class PlayerHealth : MonoBehaviour
 
     public void healthWarning()
     {
-        audioSource.PlayOneShot(audioClips[0]);
+        audioSource.PlayOneShot(audioClips[0]);//İndex 0'ın sesini çalıyoruz
             health--;//health'i 1 azaltıyoruz
-            healthText.GetComponent<Text>().text =  health.ToString();
+            healthText.GetComponent<Text>().text =  health.ToString();//healthText'e health'i yazdırıyoruz
              if (health == 0) {
                 //Debug.Log("Game Over");
                 GameOvercollectText.GetComponent<Text>().text = collectPointScript.counter.ToString();
