@@ -15,8 +15,8 @@ public class SkyTrapController : MonoBehaviour
       while (true)
       {
       Vector3 poz = new Vector3(Random.Range(-65, 72), transform.position.y, Random.Range(10, 100));
-      Instantiate(SkyTrapObject, poz, transform.rotation);
-      yield return new WaitForSeconds(7f); 
+      Instantiate(SkyTrapObject, poz, transform.rotation);//SkyTrapObject prefabı yaratır
+      yield return new WaitForSeconds(7f);//7 saniye bekle
       } 
    }
 }
