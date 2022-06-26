@@ -22,10 +22,10 @@ public class CollectPoint : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("StackArea"))
+        if (other.gameObject.CompareTag("StackArea"))//Stack boşaltma noktasında ise
         {
             StartCoroutine(ICollect());
-            collectText.GetComponent<Text>().text = counter.ToString();
+            collectText.GetComponent<Text>().text = counter.ToString();//Boşaltılan stack objelerine karşılık puan yazdır
             if (stackObjectParent.transform.childCount == 0)
             {
                 game_ManagerScript.GameWin();//Çocuk objelerinin sayısı 0 ise oyunu kazanır
