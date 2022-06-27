@@ -17,7 +17,7 @@ public class TrapControl : MonoBehaviour
        if (other.gameObject.CompareTag("trap")||other.gameObject.CompareTag("enemy"))
        {
           playerHealth.healthWarning();
-          mover.animator.SetBool("Impact", true);
+          mover.animator.SetBool("Impact", true);//Impact animasyonunu çalıştırılır.
           mover.animator.SetBool("Idling", false);
           mover.animator.SetBool("Run", false);
           mover.transform.position = Vector3.MoveTowards(transform.position,Vector3.Lerp(Vector3.back, transform.position, 0.5f), mover.speed * Time.deltaTime);
