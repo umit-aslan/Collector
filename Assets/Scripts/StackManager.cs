@@ -20,13 +20,13 @@ public class StackManager : MonoBehaviour
     void Start()
     {
         distanceBetweenStacks=prevObject.localScale.y;//Önceki stack'in yüksekliğini al.
-        audioSource = GetComponent<AudioSource>();
+        audioSource = GetComponent<AudioSource>();//audioSource componentini tanımla.
     }
 
     public void PickUp (GameObject  pickedObject,bool downOrUp=true)
     {
-      //pickedObject= çarpılan obje, needTag=çarpılan objekt tag'i gerekli mi, tag=tag ise ne olacak, downOrUp=
-        audioSource.Play();
+       //pickedObject= çarpılan obje, needTag=çarpılan objekt tag'i gerekli mi, tag=tag ise ne olacak, downOrUp=
+        audioSource.Play();//Stack sesi oynat.
         pickedObject.transform.parent=parent;//Parent'a ata.
         Vector3 desPos=prevObject.localPosition;//Önceki stack'in pozisyonunu al.
         desPos.y+=downOrUp?distanceBetweenStacks:-distanceBetweenStacks;//Yukarı veya aşağı yukarı ise yukarıya, aşağı ise aşağıya ata.
