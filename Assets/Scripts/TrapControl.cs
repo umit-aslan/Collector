@@ -18,8 +18,8 @@ public class TrapControl : MonoBehaviour
        {
           playerHealth.healthWarning();
           mover.animator.SetBool("Impact", true);//Impact animasyonunu çalıştırılır.
-          mover.animator.SetBool("Idling", false);
-          mover.animator.SetBool("Run", false);
+          mover.animator.SetBool("Idling", false);//Idling animasyonu çalışıyorsa kapat.
+          mover.animator.SetBool("Run", false);//Run animasyonu çalışıyorsa kapat.
           mover.transform.position = Vector3.MoveTowards(transform.position,Vector3.Lerp(Vector3.back, transform.position, 0.5f), mover.speed * Time.deltaTime);
           StartCoroutine(IClearItems());
           
